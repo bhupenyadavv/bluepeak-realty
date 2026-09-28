@@ -1,0 +1,101 @@
+/* ===== 1. VARIABLES: change the theme in one place ===== */
+:root {
+  --blue: #0b2f6b;
+  --blue-light: #1d4ed8;
+  --white: #ffffff;
+  --gray: #f1f4f8;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #dde3ec;
+}
+
+/* ===== 2. BASE ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: "Segoe UI", Arial, sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+section { padding: 4rem 1.25rem; }
+.container { max-width: 1100px; margin: 0 auto; }
+.section-title { text-align: center; font-size: 2rem; color: var(--blue-light); margin-bottom: .5rem; }
+.section-sub { text-align: center; color: var(--muted); margin-bottom: 2.5rem; }
+.alt { background: var(--gray); }
+.btn { display: inline-block; background: var(--blue-light); color: #fff; padding: .8rem 1.8rem; border: none;
+       border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background .3s; }
+.btn:hover { background: #163e9c; }
+
+/* ===== 3. HEADER (sticky) ===== */
+header { position: sticky; top: 0; z-index: 100; background: var(--blue); box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+.nav { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; min-height: 70px; display: flex;
+       align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
+.logo { color: #fff; font-size: 1.5rem; font-weight: 700; }
+.logo span { color: #93c5fd; }
+.nav ul { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.nav ul a { color: #fff; padding-bottom: 3px; border-bottom: 2px solid transparent; transition: border-color .3s; }
+.nav ul a:hover, .nav ul a.active { border-color: #93c5fd; }
+
+/* ===== 4. HERO (home) and PAGE BANNER (other pages) ===== */
+.hero { min-height: 80vh; display: flex; align-items: center; text-align: center; color: #fff;
+  background: linear-gradient(rgba(11,47,107,.82), rgba(11,47,107,.75)),
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400' preserveAspectRatio='xMidYMax slice'%3E%3Crect width='800' height='400' fill='%23375a99'/%3E%3Cg fill='%23294c88'%3E%3Crect x='30' y='150' width='80' height='250'/%3E%3Crect x='130' y='90' width='70' height='310'/%3E%3Crect x='230' y='190' width='90' height='210'/%3E%3Crect x='350' y='60' width='80' height='340'/%3E%3Crect x='460' y='140' width='100' height='260'/%3E%3Crect x='590' y='100' width='70' height='300'/%3E%3Crect x='690' y='180' width='90' height='220'/%3E%3C/g%3E%3C/svg%3E") center / cover no-repeat; }
+.hero h1 { font-size: clamp(2rem, 5vw, 3.4rem); margin-bottom: 1rem; }
+.hero p { font-size: 1.15rem; max-width: 600px; margin: 0 auto 2rem; }
+.hero .btn { background: #fff; color: var(--blue); }
+.hero .btn:hover { background: #dbeafe; }
+.banner { background: var(--blue); color: #fff; text-align: center; padding: 3rem 1.25rem; }
+.banner h1 { font-size: 2.2rem; }
+.banner p { opacity: .9; }
+
+/* ===== 5. PROPERTY CARDS (CSS Grid) ===== */
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; }
+.card { background: var(--white); border-radius: 10px; overflow: hidden; border: 1px solid var(--border);
+        box-shadow: 0 4px 12px rgba(0,0,0,.08); transition: transform .3s; }
+.card:hover { transform: translateY(-6px); }
+.card-img { position: relative; }
+.card-img img { width: 100%; height: 220px; object-fit: cover; object-position: center; }
+.price { position: absolute; top: 12px; left: 12px; background: var(--blue); color: #fff; padding: .3rem .8rem;
+         border-radius: 20px; font-size: .9rem; font-weight: 700; }
+.card-body { padding: 1.25rem; }
+.card-body h3 { color: var(--blue-light); }
+.location { color: var(--muted); font-size: .95rem; margin-bottom: .5rem; }
+.joke { font-style: italic; font-size: .9rem; margin-bottom: .75rem; }
+.details { display: flex; justify-content: space-between; padding: .75rem 0; margin-bottom: 1rem;
+           border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); font-size: .9rem; }
+.card .btn { width: 100%; text-align: center; }
+
+/* ===== 6. FEATURES / ABOUT ===== */
+.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; }
+.feature { text-align: center; padding: 2rem 1.25rem; background: var(--gray); border-radius: 10px; }
+.icon { width: 70px; height: 70px; margin: 0 auto 1rem; border-radius: 50%; background: var(--blue);
+        display: flex; align-items: center; justify-content: center; font-size: 2rem; }
+.feature h3 { color: var(--blue-light); margin-bottom: .5rem; }
+.feature p { color: var(--muted); }
+.about { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+.about h2 { color: var(--blue-light); margin-bottom: 1rem; }
+.about img { border-radius: 10px; }
+.about p { margin-bottom: 1rem; }
+
+/* ===== 7. FORM ===== */
+form { max-width: 600px; margin: 0 auto; background: var(--white); padding: 2rem; border-radius: 10px;
+       border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,.08); }
+.field { margin-bottom: 1.25rem; }
+label { display: block; font-weight: 600; margin-bottom: .4rem; }
+input, textarea { width: 100%; padding: .75rem; font: inherit; border: 1px solid var(--border); border-radius: 6px; }
+input:focus, textarea:focus { outline: none; border-color: var(--blue-light); box-shadow: 0 0 0 3px rgba(29,78,216,.2); }
+textarea { min-height: 120px; resize: vertical; }
+form .btn { width: 100%; }
+
+/* ===== 8. FOOTER ===== */
+footer { background: var(--blue); color: #fff; text-align: center; padding: 2rem 1.25rem; }
+footer ul { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+footer a:hover { text-decoration: underline; }
+footer p { font-size: .9rem; opacity: .85; }
+
+/* ===== 9. RESPONSIVE ===== */
+@media (max-width: 900px) { .grid, .features { grid-template-columns: repeat(2, 1fr); } .about { grid-template-columns: 1fr; } }
+@media (max-width: 600px) {
+  .grid, .features { grid-template-columns: 1fr; }
+  .nav { justify-content: center; padding: .5rem 1.25rem; }
+  .nav ul { gap: 1rem; justify-content: center; }
+}
